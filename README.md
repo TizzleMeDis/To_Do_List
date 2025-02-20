@@ -1,6 +1,7 @@
 # Command line to-do list
 ### made in python with help functions to show you how to use it
 
+## Just type a one of these commands [#] | [command (full name)] | [-[letter]
 Command List:
 - 1: Add    | -a   = Add an item in the list
 - 2: Remove |-r  = Remove an item in that list
