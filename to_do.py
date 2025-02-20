@@ -34,7 +34,7 @@ def deleteTask(deletion):
 
     try:
         isinstance(int(deletion), int)
-        if len(tasks) < deletion:
+        if len(tasks) < int(deletion):
             print("\nTask not on list!!!\n")
             return ''
         tasks.pop(int(deletion)-1)
