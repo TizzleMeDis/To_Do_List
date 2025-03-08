@@ -8,9 +8,15 @@ def main():
 
         if(request.lower() == "add" or request.lower() == "1" or request.lower() == "-a"):
             task = input("Task to add: ")
+            if task == "":
+                print("\nPlease Enter a task to Add!\n")
+                continue
             addTask(task)
         elif(request.lower() == "remove" or request.lower() == "2" or request.lower() == "-r"):
             task = input("Task to delete: ")
+            if task == "":
+                print("\nPlease Enter a task to Delete!\n")
+                continue
             deleteTask(task)
         elif(request.lower() == "view" or request.lower() == "3" or request.lower() == "-v"):
             seeTasks()
