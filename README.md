@@ -1,4 +1,7 @@
 # Command line to-do list
+
+## To use in terminal command: python .\main.py
+
 ### made in python with help functions to show you how to use it
 
 ## Just type a one of these commands [#] | [command (full name)] | [-[letter]
