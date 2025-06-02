@@ -1,6 +1,8 @@
-tasks = []
+from add_task import add_task
+from delete_task import delete_task
+from view_task import view_task
+
 def main():
-    global tasks
     flag = True
     print("\n---LIST MADE: (add a task)---\nWhat would you like to do?\n   1: Add\n   2: Remove\n   3: View\n   4: Quit\n")
     while flag:
@@ -11,15 +13,15 @@ def main():
             if task == "":
                 print("\nPlease Enter a task to Add!\n")
                 continue
-            addTask(task)
+            add_task(task)
         elif(request.lower() == "remove" or request.lower() == "2" or request.lower() == "-r"):
             task = input("Task to delete: ")
             if task == "":
                 print("\nPlease Enter a task to Delete!\n")
                 continue
-            deleteTask(task)
+            delete_task(task)
         elif(request.lower() == "view" or request.lower() == "3" or request.lower() == "-v"):
-            seeTasks()
+            view_task()
         elif(request.lower() == "quit" or request.lower() == "4" or request.lower() == "-q"):
             print("\nDone..")
             flag = False
@@ -29,41 +31,5 @@ def main():
             print("\n-------------NO SUCH COMMAND-----------\nNeed help just type 'help'\n")
         
     print("Exiting...")
-
-def addTask(addition):
-    global tasks
-    tasks.append(addition)
-    print("\nTASK APPENDED\n")
-
-def deleteTask(deletion):
-    global tasks
-
-    try:
-        isinstance(int(deletion), int)
-        if len(tasks) < int(deletion):
-            print("\nTask not on list!!!\n")
-            return ''
-        tasks.pop(int(deletion)-1)
-        print("\nTASK REMOVED!\n")
-        return ''
-    except:
-        for index in range(len(tasks)):
-            if  deletion.lower() in tasks[index].lower():
-                tasks.pop(index)
-                print("\nTASK REMOVED!\n")
-                return ''
-
-    print("\nTask not on list!!!\n")
-    return ''
-
-def seeTasks():
-    global tasks
-    if len(tasks) == 0:
-        print("\n------ LIST EMPTY!!! -----\n")
-        return ''
-    print("\n----------------- TASK LIST --------------")
-    for index in range(len(tasks)):
-        print(f"{index+1}: {tasks[index]}")
-    print("------------------------------------------\n")
 
 main()
